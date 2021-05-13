@@ -92,8 +92,7 @@ main =
 
 view : Computer -> Model -> List Shape
 view computer { playerPos, gecis, golyo } =
-    [ image 1500 1500 "https://thumbs.dreamstime.com/b/transparent-grid-vector-background-transparent-grid-modern-illustration-transparent-grid-vector-background-transparent-grid-modern-129498878.jpg"
-    , area
+    [ area
     , haz |> move 200 -50
     , ag 5 (wave 10 180 20 computer.time) |> moveDown 200 |> scale 0.85
     , torpe |> vecMove playerPos |> scale 0.5
@@ -102,7 +101,7 @@ view computer { playerPos, gecis, golyo } =
     , fasz golyo
         |> move computer.mouse.x computer.mouse.y
         |> rotate (faszAngle computer.time)
-    , ruler
+    
 
     -- , background 0
     ]
